@@ -89,7 +89,7 @@ getAvailability <- function(assetTP.Media.IDs) {
     api_url <- paste0(base_url, id)
     
     # Perform the GET request
-    response <- GET(url = api_url, config = authenticate("BpDPaXjOLKWzJ5HE", "qM8ADDfWQaVs3tGoPT05JvIEcmiRLCPq"))
+    response <- GET(url = api_url, config = authenticate("username", "password"))
     
     # Make sure the status code is 200
     if (status_code(response) == 200) {
@@ -256,7 +256,7 @@ library(arules)
 library(opusminer)
 
 # read transactions file back in (dumb solution)
-newdata <- read_transactions("C:\\Users\\u6010825\\OneDrive - University of Utah\\Documents\\R_Projects\\streaming_sparse_08_2024.csv", format = "transactions", sep = "_")
+newdata <- read_transactions("streaming_sparse_08_2024.csv", format = "transactions", sep = "_")
 
 # generate the association rules in advance! what a novel idea!
 streamingrules <- apriori(newdata, parameter = list(support =
